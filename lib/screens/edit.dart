@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getex_tudu/controler/home_contorler.dart';
@@ -22,7 +24,8 @@ class Editpage extends StatelessWidget {
         TextEditingController(text: student.phone);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit details'),
+        centerTitle: true,
+        title: const Text('Edit details'),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
@@ -30,30 +33,30 @@ class Editpage extends StatelessWidget {
           children: [
             TextField(
               controller: namecontroler,
-              decoration: InputDecoration(labelText: 'Name'),
+              decoration: const InputDecoration(labelText: 'Name'),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             TextField(
               controller: agecontroler,
-              decoration: InputDecoration(labelText: 'Age'),
+              decoration: const InputDecoration(labelText: 'Age'),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             TextField(
               controller: phonenumberconrtroler,
-              decoration: InputDecoration(labelText: 'phone'),
+              decoration: const InputDecoration(labelText: 'phone'),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             TextField(
               controller: placecontroler,
-              decoration: InputDecoration(labelText: 'Place'),
+              decoration: const InputDecoration(labelText: 'Place'),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             ElevatedButton(
@@ -65,9 +68,9 @@ class Editpage extends StatelessWidget {
                       phonenumberconrtroler.text,
                       placecontroler.text);
                   Get.snackbar('Success', '${student.name} details updated');
-                  Get.to(() => Homepage());
+                  Get.to(() => const Homepage());
                 },
-                child: Text('save'))
+                child: const Text('save'))
           ],
         ),
       ),
